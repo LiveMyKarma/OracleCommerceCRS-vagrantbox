@@ -1,6 +1,5 @@
 # OracleCommerceCRS-vagrantbox
 Get up and running with Oracle Commerce 11 including CRS with one click installation
-Installing Oracle Commerce is painful, not anymore!!!
 
 I am really excited about this!!! It's my effort to build a portable development environment with Oracle Commerce 11.
 
