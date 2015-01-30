@@ -1,11 +1,9 @@
-#!/bin/bash
+#!/bin/bash -eux
 
 sudo groupadd atgdev
 sudo useradd -g atgdev atgdev
 sudo passwd atgdev
-sudo su - atgdev
 
-sudo mkdir /vagrant
 sudo mount -t vboxsf vagrant /vagrant/
 
 #prerequisites
@@ -13,11 +11,10 @@ sudo cp /vagrant/packer/scripts/atg/hosts /etc/hosts
 sudo cp /vagrant/packer/scripts/atg/network /etc/sysconfig/network
 sudo /etc/init.d/network restart
 
-sudo hostname -v atgdev.localdomain
+echo "atgdev        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 
-errorlevel=$?
+#copy in atgdev .bash_profile
+sudo -u atgdev cp /vagrant/packer/scripts/atg/.bash_profile /home/atgdev/.bash_profile
+sudo -u atgdev cp /vagrant/packer/scripts/atg/oraInst.loc /etc/oraInst.loc
 
-if [ "$errorlevel" != "0" ] && [ "$errorlevel" != "6" ]; then
-  echo "There was an error preventing script from continuing"
-  exit 1
-fi
+

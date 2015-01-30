@@ -1,2 +1,2 @@
-inventory_loc=/opt/appserver/wlserver/oraInventory/
+inventory_loc=/home/atgdev/wlserver/oraInventory/
 inst_group=atgdev

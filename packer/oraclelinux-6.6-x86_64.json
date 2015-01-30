@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "chef_version": "provisionerless",
+    "mirror": "http://mirrors.kernel.org/oraclelinux"
+  },
   "builders": [
     {
       "boot_command": [
@@ -86,10 +90,6 @@
       ],
       "type": "shell"
     }
-  ],
-  "variables": {
-    "chef_version": "provisionerless",
-    "mirror": "http://mirrors.kernel.org/oraclelinux"
-  }
+  ]
 }
 

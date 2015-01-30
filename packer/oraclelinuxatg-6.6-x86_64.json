@@ -1,6 +1,9 @@
 {
   "variables": {
-    "OVF_FILE_PATH": "C:/MyStuff/Setup/Vm/packer-oraclelinux-6.6-x86_64.ovf",
+    "ovf_file_path": "packer/packer-oraclelinux-6.6-x86_64.ovf",
+	"vbox_share_dir": "C:/oneplatform/Tools/oracle12c-vagrant-master",
+	"vbox_memory": "2048",
+	"vbox_cpus": "2",
     "chef_version": "provisionerless",
     "mirror": "http://mirrors.kernel.org/oraclelinux"
   },
@@ -17,7 +20,7 @@
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "10000s",
       "type": "virtualbox-ovf",
-	  "source_path": "{{user `OVF_FILE_PATH`}}",
+	  "source_path": "{{user `ovf_file_path`}}",
       "vboxmanage": [
         [
 			"sharedfolder", 
@@ -26,24 +29,24 @@
 			"--name", 
 			"vagrant", 
 			"--hostpath", 
-			"C:/oneplatform/Tools/oracle12c-vagrant-master",
+			"{{user `vbox_share_dir`}}",
 			"--automount"
 		],
         [
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "2048"
+          "{{user `vbox_memory`}}"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "2"
+          "{{user `vbox_cpus`}}"
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-oraclelinux-6.5-x86_64"
+      "vm_name": "oraclecommerce11"
     },
     {
       "boot_command": [
