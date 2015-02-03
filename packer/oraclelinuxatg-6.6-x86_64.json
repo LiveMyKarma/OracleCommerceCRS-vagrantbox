@@ -91,7 +91,8 @@
       "scripts": [
 		"scripts/atg/init.sh",
         "scripts/atg/java.sh",
-		"scripts/atg/wl.sh"
+		"scripts/atg/wl.sh",
+	"scripts/atg/endeca.sh"
       ],
       "type": "shell"
     }
