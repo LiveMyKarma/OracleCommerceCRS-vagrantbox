@@ -67,13 +67,6 @@
       }
     }
   ],
-  "post-processors": [
-    {
-      "output": "oraclelinux-6.6-publicyum.box",
-      "type": "vagrant",
-	  "keep_input_artifact": true
-    }
-  ],
   "provisioners": [
     {
       "environment_vars": [
