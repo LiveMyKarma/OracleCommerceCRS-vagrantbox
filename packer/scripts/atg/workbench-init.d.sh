@@ -18,7 +18,7 @@
 #
 #      ENDECA_TOOLS_ROOT=/opt/endeca/ToolsAndFrameworks/VERSION
 #
-ENDECA_TOOLS_ROOT=/opt/endeca/ToolsAndFrameworks/11.1.0
+ENDECA_TOOLS_ROOT=/home/atgdev/commerce/endeca/ToolsAndFrameworks/11.1.0
 #
 # 2) Edit the ENDECA_USER (below) to match the system user account that you
 #    want Workbench to run under. For example:

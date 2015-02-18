@@ -1,6 +1,6 @@
 {
   "variables": {
-    "ovf_file_path": "packer/packer-oraclelinux-6.6-x86_64.ovf",
+    "ovf_file_path": "vm/packer-oraclelinux-6.6-x86_64.ovf",
 	"vbox_share_dir": "C:/oneplatform/Tools/oracle12c-vagrant-master",
 	"vbox_memory": "2048",
 	"vbox_cpus": "2",
@@ -58,8 +58,8 @@
       "http_directory": "http",
       "iso_checksum": "5738F10A506D3630EDFD297EF179B553091C6A48",
       "iso_checksum_type": "sha1",
-      "iso_url": "oracle_linux_6.6.iso",
-      "output_directory": "packer-oraclelinux-6.6-x86_64-vmware",
+      "iso_url": "oracle_linux_6.5.iso",
+      "output_directory": "packer-oraclelinux-6.5-x86_64-vmware",
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -77,7 +77,7 @@
   ],
   "post-processors": [
     {
-      "output": "oracleatg11-publicyum.box",
+      "output": "oraclecommerce11.box",
       "type": "vagrant",
 	  "keep_input_artifact": true
     }
@@ -91,8 +91,7 @@
       "scripts": [
 		"scripts/atg/init.sh",
         "scripts/atg/java.sh",
-		"scripts/atg/wl.sh",
-	"scripts/atg/endeca.sh"
+		"scripts/atg/wl.sh"
       ],
       "type": "shell"
     }

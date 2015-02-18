@@ -1,10 +1,10 @@
 #!/bin/bash -eux
+sudo mkdir /vagrant
+sudo mount -t vboxsf vagrant /vagrant/
 
 sudo groupadd atgdev
 sudo useradd -g atgdev atgdev
-sudo passwd atgdev
-
-sudo mount -t vboxsf vagrant /vagrant/
+echo "atgpwd" | sudo passwd atgdev --stdin
 
 #prerequisites
 sudo cp /vagrant/packer/scripts/atg/hosts /etc/hosts
@@ -15,6 +15,7 @@ echo "atgdev        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 
 #copy in atgdev .bash_profile
 sudo -u atgdev cp /vagrant/packer/scripts/atg/.bash_profile /home/atgdev/.bash_profile
-sudo -u atgdev cp /vagrant/packer/scripts/atg/oraInst.loc /etc/oraInst.loc
+sudo cp /vagrant/packer/scripts/atg/oraInst.loc /etc/oraInst.loc
+sudo chown atgdev:atgdev /etc/oraInst.loc
 
 
