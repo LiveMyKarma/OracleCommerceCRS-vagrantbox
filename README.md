@@ -22,7 +22,7 @@ http://packer.io
 
 http://vagrantup.com
 
-### Oracle Linux 6.5
+### Oracle Linux 6.6
 
 1. Download Oracle Linux 6.6 DVD ISO
 2. Rename and move it to packer/oracle_linux_6.6.iso
