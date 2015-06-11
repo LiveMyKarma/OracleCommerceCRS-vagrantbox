@@ -21,7 +21,7 @@
 			"--name", 
 			"vagrant", 
 			"--hostpath", 
-			"C:/oneplatform/Tools/oracle12c-vagrant-master",
+			"{{user `vbox_share_dir`}}",
 			"--automount"
 		],
         [
@@ -88,7 +88,8 @@
   ],
   "variables": {
     "chef_version": "provisionerless",
-    "mirror": "http://mirrors.kernel.org/oraclelinux"
+    "mirror": "http://mirrors.kernel.org/oraclelinux",
+    "vbox_share_dir": "C:/oneplatform/Tools/oracle12c-vagrant-master"
   }
 }
 
