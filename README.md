@@ -71,8 +71,10 @@ So far installation of JDK, weblogic and Endeca is automated and ATG installers 
 ### Build boxes
 1. Run buildbox.bat on windows or buildbox.sh on linux. It will create a VM with Oracle linux 6.6
 2. Rename packer/packer_output folder to packer/vm
-3. Run buildDB.bat on windows or buildDB.sh on linux. It will create a VM and vagrant box with Oracle 12c database
-4. Run buildATG.bat on windows or buildATG.sh on linux. It will create a VM and vagrant box with JDK and Weblogic installed
-5. Do a vagrant up for ATG vagrant box
-6. Run /vagrant/packer/scripts/atg/endeca.sh to install endeca
-7. Run /vagrant/packer/scripts/atg/atg.sh to install ATG
+3. Based on where you have downloaded this utility, change the variable "vbox_share_dir" in packer/oraclelinuxdb-6.6-x86_64.json.
+4. Run buildDB.bat on windows or buildDB.sh on linux. It will create a VM and vagrant box with Oracle 12c database
+5. Based on where you have downloaded this utility, change the variable "vbox_share_dir" in packer/oraclelinuxatg-6.6-x86_64.json.
+6. Run buildATG.bat on windows or buildATG.sh on linux. It will create a VM and vagrant box with JDK and Weblogic installed
+7. Do a vagrant up for ATG vagrant box
+8. Run /vagrant/packer/scripts/atg/endeca.sh to install endeca
+9. Run /vagrant/packer/scripts/atg/atg.sh to install ATG
